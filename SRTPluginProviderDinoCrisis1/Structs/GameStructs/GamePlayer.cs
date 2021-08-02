@@ -19,8 +19,10 @@ namespace SRTPluginProviderDinoCrisis1.Structs.GameStructs
                 !IsAlive ? PlayerStatus.Dead :
                 Percentage >= 0.75 ? PlayerStatus.Fine :
                 Percentage >= 0.50 ? PlayerStatus.FineToo :
-                Percentage >= 0.25 ? PlayerStatus.FineToo : PlayerStatus.Danger;
+                Percentage >= 0.25 ? PlayerStatus.Caution : PlayerStatus.Danger;
         }
+
+        public string CurrentHealthState => HealthState.ToString();
     }
 
     public enum PlayerStatus
